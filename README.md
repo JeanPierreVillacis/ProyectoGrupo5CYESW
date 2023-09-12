@@ -50,7 +50,7 @@ Se puede usar este recurso a traves de Postman o, a su vez, se puede utilizar la
     ```sh
     pip install uvicorn
     ```
-10. Levantar el servidor de **uvicorn** para comenzar a usar la API usando el siguiente comando.
+10. Levantar el servidor de **uvicorn** para comenzar a usar la API con el siguiente comando:
 
     ```sh
     uvicorn main:app --reload
@@ -70,7 +70,7 @@ Varias partes de la información presentada en este apartado no son de autoría 
 
         `Uvicorn running on ←[1mhttp://127.0.0.1:8000←[`
     2. Pegar la dirección IP en cualquier navegador y de esta forma se podría empezar a interactuar con la API. No obstante, en este caso unicamente se podrán hacer peticiones GET.
-    3. Para trabajar con las demas peticiones HTTP se puede usar **Postman** o usar la **Interfaz Web** que provee FastAPI, para este caso, se usará la segunda opción mencionada.
+    3. Para trabajar con las demas peticiones HTTP se puede usar **Postman** o la **Interfaz Web** que provee FastAPI, para este caso, se usará la segunda opción mencionada.
     4. Luego de ingresar la dirección IP en el navegador, especificar que se desea acceder al recurso **docs** de la API, como se muestra a continuación.
 
         `http://127.0.0.1:8000/docs`
@@ -89,9 +89,9 @@ class Libro(BaseModel):
     paginas: int
     editorial: Optional[str]
 ```
-En este caso se puede observar que la clase *Libro* esta heredando de una clase padre llamada *BaseModel* que forma parte de la librería *pydantic*. El objetivo de esta heréncia es hacer que cada uno de los atributos acepte un tipo de datos en específico y así evitar inconsistencias al momento de trabajar con la API. Adicionalmente, esta clase permite especificar si un atributo es opcional de ingresar, como los es el caso para **editorial**.
+En este caso se puede observar que la clase *Libro* esta heredando de una clase padre llamada *BaseModel* que forma parte de la librería *pydantic*. El objetivo de esta heréncia es hacer que cada uno de los atributos acepte un tipo de datos en específico y así evitar inconsistencias al momento de trabajar con la API. Adicionalmente, esta clase permite especificar si un atributo es opcional de ingresar, como la **editorial** en este caso.
 
-La API cuenta con la información de algunos libros que está guardada en una lista, con la finalidad de permitir probar las funcionalidades sin la necesidad de tener que crear previamente algunos registros. Teniendo en cuenta lo mencionado, continuación, se revisará la lógica de los métodos de petición GET, POST, PUT y DELETE.
+La API cuenta con la información de algunos libros que está guardada en una lista con la finalidad de permitir probar las funcionalidades sin la necesidad de crear previamente algunos registros. Teniendo en cuenta lo mencionado, continuación, se revisará la lógica de los métodos de petición GET, POST, PUT y DELETE.
 1. **GET**
 
     Para solventar este método de petición se hace uso de la función *obtener_libro* que está dentro del archivo main.py. Recibe como parámetro un indice de tipo entero que corresponde a la posición que tiene un libro dentro de la lista que se mencionó anteriormente.
